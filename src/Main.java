@@ -1,15 +1,28 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        // Process creation
+        int pageSize = 4;
+        int pid = 1;
+        int processLength = 100;
+        LogicalMemory logicalMemory = new LogicalMemory(processLength, pageSize);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        int numberOfPages = logicalMemory.getNumberOfPages();
+        PagesTable pagesTable = new PagesTable(numberOfPages);
+
+        // Entry point - logical address
+        int logicalAddress = 11;
+        int logicalAddressPage = logicalMemory.getAddressPage(logicalAddress);
+        int logicalAddressOffset = logicalMemory.getAddressOffset(logicalAddress);
+        int physicalMemoryFrame = pagesTable.getPageFrame(logicalAddressPage);
+
+
+        int physicalMemorySize = 1000;
+        PhysicalMemory physicalMemory = new PhysicalMemory(physicalMemorySize, pageSize);
+
+        // TODO: create a method that finds physical memory addressStart by the frame given
+
+        // IMPLEMENT method alocateMemory, considering addressStart and offset
+        physicalMemory.alocateMemory(1, 10);
+
     }
 }
