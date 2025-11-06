@@ -1,6 +1,9 @@
 # Relatório do Simulador de Paginação
 Estéfano Tuyama, Gean Pereira e Tom Sales
 
+## Link do video para a apresentação
+[Link do Drive](https://drive.google.com/file/d/1liWX7rN02tNrj3WptHJAHb7-6_h7XAJv/view?usp=sharing)
+
 ## Principais Componentes
 - `memory.Main`  
   Interface de linha de comando que coleta a configuração inicial, apresenta o menu (visualizar memória, criar processo, consultar tabela) e coordena as ações junto ao `MemoryManager`.
